@@ -10,15 +10,18 @@ Simplemente abrí el archivo `index.html` con doble clic (se abre en el navegado
 ## Cómo agregar o editar productos
 
 Abrí el archivo `js/productos.js` con cualquier editor de texto (o Notepad).
-Vas a ver una lista de productos, cada uno entre `{ }`. Para agregar uno nuevo:
+Cada PERFUME es un bloque entre `{ }`, con una sola foto, y adentro tiene una
+lista de `opciones` (decant, frasco entero) con su propio precio. Para agregar
+un perfume nuevo:
 
 1. Copiá un bloque completo, desde `{` hasta `},`
 2. Pegalo antes del `]` final
-3. Cambiá los datos (nombre, marca, precio, etc.)
+3. Cambiá los datos (nombre, marca, precio de cada opción, etc.)
 4. Guardá el archivo y actualizá la página en el navegador
 
-Los campos disponibles están explicados con comentarios arriba de la lista,
-dentro del mismo archivo.
+Si un perfume solo se vende en decant (todavía no tenés frasco entero), dejá
+una sola opción dentro de `opciones`. Los campos disponibles están explicados
+con comentarios arriba de la lista, dentro del mismo archivo.
 
 ## Cómo agregar fotos
 

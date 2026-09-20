@@ -39,57 +39,79 @@
     }, 2500);
   }
 
-  function consultarProducto(producto) {
+  function consultarOpcion(producto, opcion) {
     const mensaje = CONFIG.mensajeConsulta.replace(
       "{producto}",
-      `${producto.nombre} (${producto.marca}, ${producto.ml}ml)`
+      `${producto.nombre} (${producto.marca}) - ${opcion.tipo} ${opcion.ml}ml`
     );
 
-    const copiar = () => {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(mensaje).catch(() => {});
-      }
-    };
-    copiar();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(mensaje).catch(() => {});
+    }
 
     mostrarToast("Mensaje copiado. Se abrió tu perfil de Instagram, ¡pegalo en el chat!");
     window.open(`https://ig.me/m/${CONFIG.instagramUsername}`, "_blank", "noopener");
   }
 
-  function crearCard(producto) {
-    const card = document.createElement("article");
-    card.className = "card" + (producto.disponible ? "" : " agotado");
+  function opcionesVisibles(producto, mostrarAgotados) {
+    return producto.opciones.filter((op) => mostrarAgotados || op.disponible);
+  }
 
-    const tipoClase = producto.tipo === "Decant" ? "badge-decant" : "badge-perfume";
+  function crearFilaOpcion(producto, opcion) {
+    const fila = document.createElement("div");
+    fila.className = "opcion" + (opcion.disponible ? "" : " opcion-agotada");
+
+    fila.innerHTML = `
+      <div class="opcion-info">
+        <span class="badge ${opcion.tipo === "Decant" ? "badge-decant" : "badge-perfume"}">${opcion.tipo}</span>
+        <span class="opcion-ml">${opcion.ml} ml</span>
+        ${!opcion.disponible ? '<span class="badge badge-agotado">Agotado</span>' : ""}
+      </div>
+      <div class="opcion-accion">
+        <span class="opcion-precio">${formatearPrecio(opcion.precio)}</span>
+        <button class="opcion-consultar" ${opcion.disponible ? "" : "disabled"}>
+          ${opcion.disponible ? "Consultar" : "No disponible"}
+        </button>
+      </div>
+    `;
+
+    const boton = fila.querySelector(".opcion-consultar");
+    if (opcion.disponible) {
+      boton.addEventListener("click", () => consultarOpcion(producto, opcion));
+    }
+
+    return fila;
+  }
+
+  function crearCard(producto, opciones) {
+    const card = document.createElement("article");
+    card.className = "card";
 
     card.innerHTML = `
       <div class="card-img-wrap">
         <img src="images/productos/${producto.imagen}" alt="${producto.nombre}" loading="lazy" />
       </div>
       <div class="card-body">
-        <div class="badges">
-          <span class="badge ${tipoClase}">${producto.tipo}</span>
-          ${!producto.disponible ? '<span class="badge badge-agotado">Agotado</span>' : ""}
-        </div>
         <span class="card-marca">${producto.marca}</span>
         <h3 class="card-nombre">${producto.nombre}</h3>
         <p class="card-desc">${producto.descripcion || ""}</p>
-        <div class="card-meta">
-          <span class="card-ml">${producto.ml} ml · ${producto.genero}</span>
-          <span class="card-precio">${formatearPrecio(producto.precio)}</span>
-        </div>
-        <button class="card-consultar" ${producto.disponible ? "" : "disabled"}>
-          ${producto.disponible ? "Consultar por Instagram" : "No disponible"}
-        </button>
+        <span class="card-genero">${producto.genero}</span>
+        <div class="opciones"></div>
       </div>
     `;
 
-    const boton = card.querySelector(".card-consultar");
-    if (producto.disponible) {
-      boton.addEventListener("click", () => consultarProducto(producto));
-    }
+    const contenedorOpciones = card.querySelector(".opciones");
+    opciones.forEach((op) => contenedorOpciones.appendChild(crearFilaOpcion(producto, op)));
 
     return card;
+  }
+
+  function precioMin(opciones) {
+    return Math.min(...opciones.map((o) => o.precio));
+  }
+
+  function precioMax(opciones) {
+    return Math.max(...opciones.map((o) => o.precio));
   }
 
   function filtrarYOrdenar() {
@@ -99,9 +121,14 @@
     const orden = selectOrden.value;
     const mostrarAgotados = checkAgotados.checked;
 
-    let resultado = PRODUCTOS.filter((p) => {
-      if (!mostrarAgotados && !p.disponible) return false;
-      if (tipo !== "todos" && p.tipo !== tipo) return false;
+    let resultado = PRODUCTOS.map((p) => {
+      let opciones = opcionesVisibles(p, mostrarAgotados);
+      if (tipo !== "todos") {
+        opciones = opciones.filter((op) => op.tipo === tipo);
+      }
+      return { producto: p, opciones };
+    }).filter(({ producto: p, opciones }) => {
+      if (opciones.length === 0) return false;
       if (genero !== "todos" && p.genero !== genero) return false;
       if (texto) {
         const enNombre = p.nombre.toLowerCase().includes(texto);
@@ -113,17 +140,17 @@
 
     switch (orden) {
       case "nombre-asc":
-        resultado.sort((a, b) => a.nombre.localeCompare(b.nombre));
+        resultado.sort((a, b) => a.producto.nombre.localeCompare(b.producto.nombre));
         break;
       case "precio-asc":
-        resultado.sort((a, b) => a.precio - b.precio);
+        resultado.sort((a, b) => precioMin(a.opciones) - precioMin(b.opciones));
         break;
       case "precio-desc":
-        resultado.sort((a, b) => b.precio - a.precio);
+        resultado.sort((a, b) => precioMax(b.opciones) - precioMax(a.opciones));
         break;
       case "destacados":
       default:
-        resultado.sort((a, b) => (b.destacado ? 1 : 0) - (a.destacado ? 1 : 0));
+        resultado.sort((a, b) => (b.producto.destacado ? 1 : 0) - (a.producto.destacado ? 1 : 0));
         break;
     }
 
@@ -131,15 +158,15 @@
   }
 
   function render() {
-    const productos = filtrarYOrdenar();
+    const items = filtrarYOrdenar();
 
     grilla.innerHTML = "";
-    productos.forEach((p) => grilla.appendChild(crearCard(p)));
+    items.forEach(({ producto, opciones }) => grilla.appendChild(crearCard(producto, opciones)));
 
-    sinResultados.hidden = productos.length !== 0;
+    sinResultados.hidden = items.length !== 0;
 
     const total = PRODUCTOS.length;
-    contador.textContent = `Mostrando ${productos.length} de ${total} productos`;
+    contador.textContent = `Mostrando ${items.length} de ${total} perfumes`;
   }
 
   [inputBusqueda, selectTipo, selectGenero, selectOrden, checkAgotados].forEach((el) => {
