@@ -62,12 +62,12 @@
     fila.className = "opcion" + (opcion.disponible ? "" : " opcion-agotada");
 
     fila.innerHTML = `
-      <div class="opcion-info">
+      <div class="opcion-top">
         <span class="badge ${opcion.tipo === "Decant" ? "badge-decant" : "badge-perfume"}">${opcion.tipo}</span>
         <span class="opcion-ml">${opcion.ml} ml</span>
         ${!opcion.disponible ? '<span class="badge badge-agotado">Agotado</span>' : ""}
       </div>
-      <div class="opcion-accion">
+      <div class="opcion-bottom">
         <span class="opcion-precio">${formatearPrecio(opcion.precio)}</span>
         <button class="opcion-consultar" ${opcion.disponible ? "" : "disabled"}>
           ${opcion.disponible ? "Consultar" : "No disponible"}
