@@ -1,0 +1,322 @@
+:root {
+  --color-bg: #faf7f2;
+  --color-bg-alt: #f2ece1;
+  --color-card: #ffffff;
+  --color-text: #2b2622;
+  --color-text-muted: #71675c;
+  --color-accent: #a9803f;
+  --color-accent-dark: #7c5c2c;
+  --color-border: #e6ddcd;
+  --color-badge-decant: #e7d9bd;
+  --color-badge-perfume: #ded6e8;
+  --color-out: #c0392b;
+  --shadow-card: 0 2px 10px rgba(43, 38, 34, 0.06);
+  --shadow-card-hover: 0 8px 24px rgba(43, 38, 34, 0.12);
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: 20px;
+}
+
+/* ---------- HEADER ---------- */
+
+.site-header {
+  background: linear-gradient(135deg, var(--color-bg-alt), var(--color-bg));
+  border-bottom: 1px solid var(--color-border);
+  padding-block: 28px;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.brand h1 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--color-accent-dark);
+}
+
+.slogan {
+  margin: 6px 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.ig-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--color-accent-dark);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.15s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.ig-button:hover {
+  background: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+/* ---------- FILTERS ---------- */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-top: 28px;
+  margin-bottom: 6px;
+}
+
+.filters input[type="text"],
+.filters select {
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-card);
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+.filters input[type="text"] {
+  flex: 1 1 220px;
+  min-width: 0;
+}
+
+.checkbox-agotados {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.contador {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  margin: 10px 2px 20px;
+}
+
+/* ---------- GRID / CARDS ---------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
+  padding-bottom: 40px;
+}
+
+.card {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  position: relative;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+.card.agotado {
+  opacity: 0.6;
+}
+
+.card-img-wrap {
+  aspect-ratio: 1 / 1;
+  background: var(--color-bg-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.badges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 2px;
+}
+
+.badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.badge-decant { background: var(--color-badge-decant); color: #7a5c1e; }
+.badge-perfume { background: var(--color-badge-perfume); color: #533c73; }
+.badge-agotado { background: #f6d9d5; color: var(--color-out); }
+
+.card-marca {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.card-nombre {
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+.card-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  flex: 1;
+}
+
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 4px;
+}
+
+.card-ml {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.card-precio {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-accent-dark);
+}
+
+.card-consultar {
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  background: var(--color-accent-dark);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  font-family: inherit;
+}
+
+.card-consultar:hover {
+  background: var(--color-accent);
+}
+
+.card-consultar:disabled {
+  background: #c9c2b6;
+  cursor: not-allowed;
+}
+
+.sin-resultados {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: 60px 0;
+}
+
+/* ---------- FOOTER ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  padding: 24px 0 40px;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.footer-note {
+  margin-top: 4px;
+  font-size: 0.78rem;
+}
+
+/* ---------- TOAST ---------- */
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  background: var(--color-text);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  z-index: 100;
+  animation: toast-in 0.2s ease;
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translate(-50%, 10px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 480px) {
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .filters input[type="text"],
+  .filters select {
+    width: 100%;
+  }
+}

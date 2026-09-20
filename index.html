@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fragance of the Viking — Catálogo</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1 id="brand-name">Fragance of the Viking</h1>
+        <p id="brand-slogan" class="slogan">Perfumes originales y decants al mejor precio</p>
+      </div>
+      <a id="instagram-link" class="ig-button" href="#" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="2"/>
+          <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="2"/>
+          <circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/>
+        </svg>
+        <span>Seguinos</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="filters">
+      <input type="text" id="filtro-busqueda" placeholder="Buscar por nombre o marca..." aria-label="Buscar" />
+
+      <select id="filtro-tipo" aria-label="Filtrar por tipo">
+        <option value="todos">Todos los tipos</option>
+        <option value="Decant">Decants</option>
+        <option value="Perfume">Perfumes completos</option>
+      </select>
+
+      <select id="filtro-genero" aria-label="Filtrar por género">
+        <option value="todos">Todos los géneros</option>
+        <option value="Hombre">Hombre</option>
+        <option value="Mujer">Mujer</option>
+        <option value="Unisex">Unisex</option>
+      </select>
+
+      <select id="orden" aria-label="Ordenar por">
+        <option value="destacados">Destacados primero</option>
+        <option value="nombre-asc">Nombre (A-Z)</option>
+        <option value="precio-asc">Precio (menor a mayor)</option>
+        <option value="precio-desc">Precio (mayor a menor)</option>
+      </select>
+
+      <label class="checkbox-agotados">
+        <input type="checkbox" id="filtro-agotados" />
+        Mostrar agotados
+      </label>
+    </section>
+
+    <p id="contador-resultados" class="contador"></p>
+
+    <section id="grilla-productos" class="grid"></section>
+
+    <p id="sin-resultados" class="sin-resultados" hidden>No encontramos productos con esos filtros.</p>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="anio"></span> <span class="footer-brand"></span> — Catálogo hecho con ♥</p>
+      <p class="footer-note">Los precios y disponibilidad pueden variar. Consultanos por Instagram.</p>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/productos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
