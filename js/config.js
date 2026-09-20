@@ -13,7 +13,7 @@ window.CONFIG = {
   eslogan: "Perfumes originales y decants al mejor precio",
 
   // Usuario de Instagram SIN el @ (ej: si tu perfil es instagram.com/mi_perfumeria, poné "mi_perfumeria")
-  instagramUsername: "tuinstagram",
+  instagramUsername: "fragance.of.the.viking",
 
   // Moneda que se muestra antes del precio
   simboloMoneda: "$",
