@@ -12,8 +12,19 @@
   const inputBusqueda = $("#filtro-busqueda");
   const selectTipo = $("#filtro-tipo");
   const selectGenero = $("#filtro-genero");
+  const selectMarca = $("#filtro-marca");
   const selectOrden = $("#orden");
   const checkAgotados = $("#filtro-agotados");
+
+  function poblarMarcas() {
+    const marcas = [...new Set(PRODUCTOS.map((p) => p.marca))].sort((a, b) => a.localeCompare(b));
+    marcas.forEach((marca) => {
+      const option = document.createElement("option");
+      option.value = marca;
+      option.textContent = marca;
+      selectMarca.appendChild(option);
+    });
+  }
 
   function aplicarConfiguracion() {
     document.title = `${CONFIG.nombreEmprendimiento} — Catálogo`;
@@ -127,6 +138,7 @@
     const texto = inputBusqueda.value.trim().toLowerCase();
     const tipo = selectTipo.value;
     const genero = selectGenero.value;
+    const marca = selectMarca.value;
     const orden = selectOrden.value;
     const mostrarAgotados = checkAgotados.checked;
 
@@ -139,6 +151,7 @@
     }).filter(({ producto: p, opciones }) => {
       if (opciones.length === 0) return false;
       if (genero !== "todos" && p.genero !== genero) return false;
+      if (marca !== "todas" && p.marca !== marca) return false;
       if (texto) {
         const enNombre = p.nombre.toLowerCase().includes(texto);
         const enMarca = p.marca.toLowerCase().includes(texto);
@@ -178,11 +191,12 @@
     contador.textContent = `Mostrando ${items.length} de ${total} perfumes`;
   }
 
-  [inputBusqueda, selectTipo, selectGenero, selectOrden, checkAgotados].forEach((el) => {
+  [inputBusqueda, selectTipo, selectGenero, selectMarca, selectOrden, checkAgotados].forEach((el) => {
     el.addEventListener("input", render);
     el.addEventListener("change", render);
   });
 
   aplicarConfiguracion();
+  poblarMarcas();
   render();
 })();

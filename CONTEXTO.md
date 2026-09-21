@@ -120,7 +120,8 @@ producto nuevo puede sumarla.
 
 ## Pendientes / ideas anotadas, no implementadas
 
-- Filtro por marca (hoy solo hay filtro por tipo y género).
+Sin pendientes técnicos abiertos por ahora (2026-09-21). El catálogo tiene
+filtros por tipo, género, marca y búsqueda por texto.
 
 **Descartado a propósito**: botón de WhatsApp como alternativa a Instagram.
 El usuario pidió explícitamente no agregarlo (2026-09-21): el WhatsApp
