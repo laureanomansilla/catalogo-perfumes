@@ -140,6 +140,21 @@ modal de un perfume) y `consultar_producto` (al tocar "Consultar" en una
 opción), para ver qué perfumes generan más interés y más consultas, no
 solo visitas a la página. Se revisa en analytics.google.com.
 
+## Newsletter / lista de contactos para promociones
+
+Sección `.newsletter` en `index.html` (arriba de los filtros), con un
+`<iframe>` que embebe un formulario de suscripción hosteado en **Brevo**
+(cuenta gratuita del usuario, laureano ezequiel). El formulario pide solo
+email. Cada suscripción queda guardada en los Contactos de Brevo
+(brevo.com, sección CRM > Contactos), y desde ahí (Marketing > Campañas)
+el usuario puede diseñar y mandar emails de promociones a toda la lista.
+No requiere ningún backend propio — todo lo maneja Brevo.
+
+Si en algún momento hay que cambiar el diseño del formulario (colores,
+texto, campos), se edita desde Brevo (Marketing > Formularios) y el iframe
+del catálogo se actualiza solo, sin tocar código. Si se recrea el
+formulario desde cero, hay que reemplazar la URL del `src` del iframe acá.
+
 ## Pendientes / ideas anotadas, no implementadas
 
 Sin pendientes técnicos abiertos (2026-09-21).
