@@ -121,7 +121,11 @@ producto nuevo puede sumarla.
 ## Pendientes / ideas anotadas, no implementadas
 
 - Filtro por marca (hoy solo hay filtro por tipo y género).
-- Botón de WhatsApp como alternativa a Instagram.
+
+**Descartado a propósito**: botón de WhatsApp como alternativa a Instagram.
+El usuario pidió explícitamente no agregarlo (2026-09-21): el WhatsApp
+vinculado es el celular personal de su hijo (menor) y no quiere exponerlo
+a desconocidos. No proponer esto de nuevo salvo que el usuario lo pida.
 
 ## Cómo seguir trabajando
 
