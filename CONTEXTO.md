@@ -132,19 +132,17 @@ sin ficha en Fragrantica).
 
 ## Google Analytics
 
-Preparado pero **desactivado por defecto**: `js/config.js` tiene el campo
-`googleAnalyticsId: ""`. Cuando el usuario cree su propiedad de GA4 y pase
-el ID (formato `G-XXXXXXX`), completar ese campo — `main.js`
-(`cargarGoogleAnalytics`) inyecta el script de gtag.js solo si ese campo
-tiene un valor. Ya están instrumentados dos eventos personalizados:
-`ver_producto` (al abrir el modal de un perfume) y `consultar_producto`
-(al tocar "Consultar" en una opción), para poder ver qué perfumes generan
-más interés y más consultas, no solo visitas a la página.
+Activo desde 2026-09-21. `js/config.js` tiene `googleAnalyticsId: "G-9CY86YSVYH"`
+(propiedad GA4 del usuario). `main.js` (`cargarGoogleAnalytics`) inyecta el
+script de gtag.js porque ese campo tiene valor; si se vacía, se desactiva.
+Hay dos eventos personalizados instrumentados: `ver_producto` (al abrir el
+modal de un perfume) y `consultar_producto` (al tocar "Consultar" en una
+opción), para ver qué perfumes generan más interés y más consultas, no
+solo visitas a la página. Se revisa en analytics.google.com.
 
 ## Pendientes / ideas anotadas, no implementadas
 
-- Falta que el usuario cree la propiedad de Google Analytics y pase el ID
-  (ver sección de arriba) para activar las estadísticas.
+Sin pendientes técnicos abiertos (2026-09-21).
 
 **Descartado a propósito**: botón de WhatsApp como alternativa a Instagram.
 El usuario pidió explícitamente no agregarlo (2026-09-21): el WhatsApp
