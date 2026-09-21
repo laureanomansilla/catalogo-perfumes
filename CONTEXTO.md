@@ -142,18 +142,24 @@ solo visitas a la página. Se revisa en analytics.google.com.
 
 ## Newsletter / lista de contactos para promociones
 
-Sección `.newsletter` en `index.html` (arriba de los filtros), con un
-`<iframe>` que embebe un formulario de suscripción hosteado en **Brevo**
-(cuenta gratuita del usuario, laureano ezequiel). El formulario pide solo
-email. Cada suscripción queda guardada en los Contactos de Brevo
-(brevo.com, sección CRM > Contactos), y desde ahí (Marketing > Campañas)
-el usuario puede diseñar y mandar emails de promociones a toda la lista.
-No requiere ningún backend propio — todo lo maneja Brevo.
+Botón **"Recibir promos por email"** en el header, debajo de "Seguinos"
+(`#abrir-newsletter` en `index.html`). Al tocarlo abre `#newsletter-overlay`,
+un modal con un `<iframe>` que embebe un formulario de suscripción hosteado
+en **Brevo** (cuenta gratuita del usuario). El formulario pide solo email.
+Se probó inicialmente como sección fija arriba de la página, pero el
+usuario la sacó de ahí (2026-09-21, "se ve feo") y se movió al botón/modal
+actual.
 
-Si en algún momento hay que cambiar el diseño del formulario (colores,
-texto, campos), se edita desde Brevo (Marketing > Formularios) y el iframe
-del catálogo se actualiza solo, sin tocar código. Si se recrea el
-formulario desde cero, hay que reemplazar la URL del `src` del iframe acá.
+Cada suscripción queda guardada en los Contactos de Brevo (brevo.com,
+sección CRM > Contactos), y desde ahí (Marketing > Campañas) el usuario
+puede diseñar y mandar emails de promociones a toda la lista. No requiere
+ningún backend propio — todo lo maneja Brevo.
+
+Si se recrea el formulario desde cero en Brevo, hay que reemplazar la URL
+del `src` del iframe en `index.html` (hay dos referencias en el HTML:
+dentro de `#newsletter-overlay`). **Importante**: el iframe no debe tener
+`loading="lazy"` — al estar dentro de un modal oculto por defecto, el
+lazy-load evita que cargue a tiempo cuando se abre.
 
 ## Pendientes / ideas anotadas, no implementadas
 
