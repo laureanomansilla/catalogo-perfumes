@@ -93,11 +93,23 @@ Carolina Herrera. El cliente avisó que próximamente va a sumar perfumes
 que **solo** se venden en decant (sin frasco entero) — para esos casos,
 `opciones` va a tener un solo bloque.
 
+## Optimización automática de fotos
+
+Las fotos de `images/productos/` se optimizan solas: `.github/workflows/optimize-images.yml`
+corre `scripts/optimize-images.js` cada vez que se sube o cambia algo ahí
+(por `git push` o editando directo en la web de GitHub), las achica a
+900x900px máx. y las convierte a JPG calidad 78. Si el archivo cambia de
+extensión (ej. `.png` -> `.jpg`), el script corrige solo la referencia en
+`js/productos.js`. El resultado se commitea de vuelta automáticamente
+como `github-actions[bot]`. No requiere que nadie lo corra a mano.
+
+Para que el bot pueda pushear hace falta que el repo tenga los permisos
+de Actions en "Read and write" (`gh api -X PUT
+repos/laureanomansilla/catalogo-perfumes/actions/permissions/workflow -f
+default_workflow_permissions=write`) — ya está configurado así.
+
 ## Pendientes / ideas anotadas, no implementadas
 
-- Optimizar el peso de las fotos (varias pesan 1-2MB, son piezas
-  publicitarias completas con fondo). Achicarlas mejoraría la velocidad
-  de carga.
 - Filtro por marca (hoy solo hay filtro por tipo y género).
 - Botón de WhatsApp como alternativa a Instagram.
 - Etiqueta "Nuevo" para últimos ingresos.

@@ -1,0 +1,46 @@
+name: Optimizar fotos de productos
+
+# Se dispara solo cuando se sube o edita algo dentro de images/productos/,
+# sea por "git push" desde una PC o editando/subiendo archivos directo en
+# la web de GitHub. No requiere que nadie lo ejecute a mano.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "images/productos/**"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: optimize-images-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar sharp
+        run: npm install sharp --no-save
+
+      - name: Optimizar fotos
+        run: node scripts/optimize-images.js
+
+      - name: Subir cambios si hubo fotos optimizadas
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add images/productos js/productos.js
+            git commit -m "Optimizar fotos de productos subidas automaticamente"
+            git push
+          else
+            echo "Nada para optimizar."
+          fi

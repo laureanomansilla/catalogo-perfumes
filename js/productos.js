@@ -34,7 +34,7 @@ window.PRODUCTOS = [
     nombre: "Asad Elixir",
     marca: "Lattafa",
     genero: "Hombre",
-    imagen: "asad-elixir.png",
+    imagen: "asad-elixir.jpg",
     descripcion: "Eau de Parfum intenso y amaderado, inspirado en la fuerza del león.",
     destacado: true,
     opciones: [
@@ -47,7 +47,7 @@ window.PRODUCTOS = [
     nombre: "Mandaryn Sky",
     marca: "Armaf",
     genero: "Hombre",
-    imagen: "mandaryn-sky.png",
+    imagen: "mandaryn-sky.jpg",
     descripcion: "Odyssey Homme Limited Edition, fresco y vibrante.",
     destacado: false,
     opciones: [
@@ -60,7 +60,7 @@ window.PRODUCTOS = [
     nombre: "Hawas Ice",
     marca: "Rasasi",
     genero: "Hombre",
-    imagen: "hawas-ice.png",
+    imagen: "hawas-ice.jpg",
     descripcion: "Frescura intensa que deja huella.",
     destacado: false,
     opciones: [
@@ -73,7 +73,7 @@ window.PRODUCTOS = [
     nombre: "His Confession",
     marca: "Lattafa",
     genero: "Hombre",
-    imagen: "his-confession.png",
+    imagen: "his-confession.jpg",
     descripcion: "Edición exclusiva, elegante y envolvente.",
     destacado: false,
     opciones: [
@@ -86,7 +86,7 @@ window.PRODUCTOS = [
     nombre: "9 PM Night Out",
     marca: "Afnan",
     genero: "Hombre",
-    imagen: "9pm-night-out.png",
+    imagen: "9pm-night-out.jpg",
     descripcion: "Una fragancia más allá del tiempo, para noches inolvidables.",
     destacado: false,
     opciones: [
@@ -99,7 +99,7 @@ window.PRODUCTOS = [
     nombre: "Khamrah",
     marca: "Lattafa",
     genero: "Hombre",
-    imagen: "khamrah.png",
+    imagen: "khamrah.jpg",
     descripcion: "Oriental gourmand, fuerza en cada esencia.",
     destacado: false,
     opciones: [
@@ -216,7 +216,7 @@ window.PRODUCTOS = [
     nombre: "La Bomba",
     marca: "Carolina Herrera",
     genero: "Mujer",
-    imagen: "la-bomba.png",
+    imagen: "la-bomba.jpg",
     descripcion: "Esencia nórdica, fuerza en cada nota.",
     destacado: false,
     opciones: [
