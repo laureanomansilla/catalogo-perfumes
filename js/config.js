@@ -21,4 +21,10 @@ window.CONFIG = {
   // Texto que se copia al portapapeles cuando alguien quiere consultar por un producto
   // {producto} se reemplaza automáticamente por el nombre del producto
   mensajeConsulta: "Hola! Te quiero consultar por: {producto}",
+
+  // ID de Google Analytics (empieza con "G-"). Se consigue creando una
+  // propiedad gratuita en https://analytics.google.com (Admin > Crear
+  // propiedad > Flujo de datos web). Mientras esto esté vacío "", el
+  // catálogo NO manda ninguna estadística a Google.
+  googleAnalyticsId: "",
 };

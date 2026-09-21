@@ -118,10 +118,33 @@ los 15 perfumes cargados hasta esa fecha no tienen `fechaAlta` a propósito
 (para no mostrar la etiqueta en todos a la vez) — de ahí en más, cada
 producto nuevo puede sumarla.
 
+## Modal de detalle + notas olfativas
+
+Al hacer click en la foto o el nombre de un perfume (clase `.card-clickeable`
+en `main.js`) se abre `#modal-overlay` con foto grande, descripción y notas
+olfativas (campo `notas` en `productos.js`, texto separado por comas). Se
+cierra con la ✕, click afuera, o Escape. **Importante**: las notas de los 15
+perfumes cargados hasta el 2026-09-21 fueron buscadas una por una en
+Fragrantica (no inventadas) — si se agregan perfumes nuevos, buscar sus
+notas reales de la misma forma antes de cargarlas, o dejar `notas: ""` si
+no se encuentran (es el caso de "My Sweet Lover", una fragancia genérica
+sin ficha en Fragrantica).
+
+## Google Analytics
+
+Preparado pero **desactivado por defecto**: `js/config.js` tiene el campo
+`googleAnalyticsId: ""`. Cuando el usuario cree su propiedad de GA4 y pase
+el ID (formato `G-XXXXXXX`), completar ese campo — `main.js`
+(`cargarGoogleAnalytics`) inyecta el script de gtag.js solo si ese campo
+tiene un valor. Ya están instrumentados dos eventos personalizados:
+`ver_producto` (al abrir el modal de un perfume) y `consultar_producto`
+(al tocar "Consultar" en una opción), para poder ver qué perfumes generan
+más interés y más consultas, no solo visitas a la página.
+
 ## Pendientes / ideas anotadas, no implementadas
 
-Sin pendientes técnicos abiertos por ahora (2026-09-21). El catálogo tiene
-filtros por tipo, género, marca y búsqueda por texto.
+- Falta que el usuario cree la propiedad de Google Analytics y pase el ID
+  (ver sección de arriba) para activar las estadísticas.
 
 **Descartado a propósito**: botón de WhatsApp como alternativa a Instagram.
 El usuario pidió explícitamente no agregarlo (2026-09-21): el WhatsApp

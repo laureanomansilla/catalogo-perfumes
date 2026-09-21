@@ -102,6 +102,26 @@
 
   <div id="toast" class="toast" hidden></div>
 
+  <div id="modal-overlay" class="modal-overlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-nombre">
+      <button id="modal-cerrar" class="modal-cerrar" aria-label="Cerrar">&times;</button>
+      <div class="modal-img-wrap">
+        <img id="modal-img" src="" alt="" />
+      </div>
+      <div class="modal-body">
+        <span id="modal-marca" class="card-marca"></span>
+        <h3 id="modal-nombre" class="modal-nombre"></h3>
+        <span id="modal-genero" class="card-genero"></span>
+        <p id="modal-desc" class="card-desc"></p>
+        <div id="modal-notas-wrap" class="modal-notas-wrap" hidden>
+          <span class="modal-notas-titulo">Notas olfativas</span>
+          <p id="modal-notas" class="modal-notas"></p>
+        </div>
+        <div id="modal-opciones" class="opciones"></div>
+      </div>
+    </div>
+  </div>
+
   <script src="js/config.js"></script>
   <script src="js/productos.js"></script>
   <script src="js/main.js"></script>

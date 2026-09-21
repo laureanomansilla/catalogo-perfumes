@@ -14,6 +14,9 @@
     imagen        -> nombre del archivo de imagen dentro de images/productos/
                      (si no tenés foto todavía, dejá "placeholder.svg")
     descripcion   -> texto corto sobre el perfume
+    notas         -> (OPCIONAL) notas olfativas separadas por coma, para
+                     mostrar en el detalle del perfume (ej: "Bergamota,
+                     lavanda, ámbar"). Si no la sabés, dejala vacía "".
     destacado     -> true si querés que aparezca primero, si no false
     fechaAlta     -> (OPCIONAL) fecha en la que cargaste el perfume, en
                      formato "AAAA-MM-DD" (ej: "2026-09-21"). Si la ponés,
@@ -41,6 +44,7 @@ window.PRODUCTOS = [
     genero: "Hombre",
     imagen: "asad-elixir.jpg",
     descripcion: "Eau de Parfum intenso y amaderado, inspirado en la fuerza del león.",
+    notas: "Pimienta rosa, azafrán, pomelo, tabaco, vainilla, cedro, ámbar, incienso, pachulí",
     destacado: true,
     opciones: [
       { tipo: "Decant", ml: 5, precio: 5440, disponible: true },
@@ -54,6 +58,7 @@ window.PRODUCTOS = [
     genero: "Hombre",
     imagen: "mandaryn-sky.jpg",
     descripcion: "Odyssey Homme Limited Edition, fresco y vibrante.",
+    notas: "Mandarina, naranja, azafrán, salvia, caramelo, haba tonka, ámbar, vetiver, cedro",
     destacado: false,
     opciones: [
       { tipo: "Decant", ml: 5, precio: 5260, disponible: true },
@@ -67,6 +72,7 @@ window.PRODUCTOS = [
     genero: "Hombre",
     imagen: "hawas-ice.jpg",
     descripcion: "Frescura intensa que deja huella.",
+    notas: "Manzana, limón, bergamota, anís estrellado, ciruela, azahar, cardamomo, almizcle, ámbar, musgo",
     destacado: false,
     opciones: [
       { tipo: "Decant", ml: 5, precio: 5550, disponible: true },
@@ -80,6 +86,7 @@ window.PRODUCTOS = [
     genero: "Hombre",
     imagen: "his-confession.jpg",
     descripcion: "Edición exclusiva, elegante y envolvente.",
+    notas: "Canela, lavanda, mandarina, iris, benjuí, vainilla, haba tonka, ámbar, incienso, cedro, pachulí",
     destacado: false,
     opciones: [
       { tipo: "Decant", ml: 5, precio: 5810, disponible: true },
@@ -93,6 +100,7 @@ window.PRODUCTOS = [
     genero: "Hombre",
     imagen: "9pm-night-out.jpg",
     descripcion: "Una fragancia más allá del tiempo, para noches inolvidables.",
+    notas: "Pitahaya, coñac, lavanda, manzana, bergamota, toffee, gamuza, cardamomo, haba tonka, pachulí",
     destacado: false,
     opciones: [
       { tipo: "Decant", ml: 5, precio: 5850, disponible: true },
@@ -106,6 +114,7 @@ window.PRODUCTOS = [
     genero: "Hombre",
     imagen: "khamrah.jpg",
     descripcion: "Oriental gourmand, fuerza en cada esencia.",
+    notas: "Canela, nuez moscada, bergamota, dátiles, praliné, vainilla, haba tonka, mirra, benjuí",
     destacado: false,
     opciones: [
       { tipo: "Decant", ml: 5, precio: 5100, disponible: true },
@@ -119,6 +128,7 @@ window.PRODUCTOS = [
     genero: "Mujer",
     imagen: "yara-candy.jpg",
     descripcion: "Dulzura que te define, con frutos rojos y vainilla envolvente.",
+    notas: "Grosella negra, mandarina verde, caramelo de frutilla, gardenia, vainilla, almizcle, ámbar, sándalo",
     destacado: false,
     opciones: [
       { tipo: "Decant", ml: 5, precio: 5440, disponible: true },
@@ -132,6 +142,7 @@ window.PRODUCTOS = [
     genero: "Mujer",
     imagen: "sabah-al-ward.jpg",
     descripcion: "Notas amaderadas y toque floral, con fondo cálido y sofisticado.",
+    notas: "Pimienta rosa, mandarina, azahar, cacao, jazmín, vainilla, haba tonka, pachulí",
     destacado: false,
     opciones: [
       { tipo: "Decant", ml: 5, precio: 5100, disponible: true },
@@ -145,6 +156,7 @@ window.PRODUCTOS = [
     genero: "Mujer",
     imagen: "my-sweet-lover.jpg",
     descripcion: "Notas frutales, toque dulce y vainilla envolvente.",
+    notas: "",
     destacado: false,
     opciones: [
       { tipo: "Decant", ml: 5, precio: 4930, disponible: true },
@@ -158,6 +170,7 @@ window.PRODUCTOS = [
     genero: "Mujer",
     imagen: "miss-dear.jpg",
     descripcion: "Elegancia en cada detalle, con notas frutales y toque floral.",
+    notas: "Mandarina, rosa, jazmín, pachulí, almizcle",
     destacado: false,
     opciones: [
       { tipo: "Decant", ml: 5, precio: 4930, disponible: true },
@@ -171,6 +184,7 @@ window.PRODUCTOS = [
     genero: "Mujer",
     imagen: "sweet-tooth.jpg",
     descripcion: "Dulzura que deja huella, con vainilla cremosa y toque gourmand.",
+    notas: "Bergamota, jengibre confitado, malvavisco de chocolate, jazmín, leche de coco, vainilla, madera cashmere, crema chantilly, almizcle",
     destacado: false,
     opciones: [
       { tipo: "Decant", ml: 5, precio: 6100, disponible: true },
@@ -184,6 +198,7 @@ window.PRODUCTOS = [
     genero: "Mujer",
     imagen: "fakhar-rose.jpg",
     descripcion: "Elegancia que deja huella, con vainilla cremosa y toque amaderado.",
+    notas: "Frutos, lirio, granada, nardo, jazmín, gardenia, ylang-ylang, rosa, madreselva, peonía, vainilla, almizcle blanco, sándalo",
     destacado: false,
     opciones: [
       { tipo: "Decant", ml: 5, precio: 4930, disponible: true },
@@ -197,6 +212,7 @@ window.PRODUCTOS = [
     genero: "Hombre",
     imagen: "club-de-nuit-urban-man-elixir.jpg",
     descripcion: "Distinción en cada detalle, con bergamota, lavanda, maderas nobles y ámbar.",
+    notas: "Bergamota, pimienta rosa, jazmín, azahar, lavanda, geranio, vetiver, azafrán, ámbar, cedro, pachulí",
     destacado: false,
     opciones: [
       { tipo: "Decant", ml: 5, precio: 5100, disponible: true },
@@ -210,6 +226,7 @@ window.PRODUCTOS = [
     genero: "Hombre",
     imagen: "hawas-malibu.jpg",
     descripcion: "Frescura que deja huella, con bergamota, lavanda, maderas nobles y ámbar.",
+    notas: "Ananá, naranja, pomelo, lirio, ámbar, lavanda, haba tonka, almizcle, pachulí",
     destacado: false,
     opciones: [
       { tipo: "Decant", ml: 5, precio: 5550, disponible: true },
@@ -223,6 +240,7 @@ window.PRODUCTOS = [
     genero: "Mujer",
     imagen: "la-bomba.jpg",
     descripcion: "Esencia nórdica, fuerza en cada nota.",
+    notas: "Pitahaya, ananá, mandarina, frangipani, peonía roja, azahar, jazmín, vainilla, pachulí, haba tonka",
     destacado: false,
     opciones: [
       { tipo: "Decant", ml: 5, precio: 4787, disponible: true },
