@@ -23,6 +23,11 @@ Si un perfume solo se vende en decant (todavía no tenés frasco entero), dejá
 una sola opción dentro de `opciones`. Los campos disponibles están explicados
 con comentarios arriba de la lista, dentro del mismo archivo.
 
+**Etiqueta "Nuevo"**: si querés que un perfume recién cargado muestre la
+etiqueta "NUEVO" en la foto, agregale el campo `fechaAlta: "AAAA-MM-DD"` con
+la fecha de hoy. La etiqueta aparece sola durante 24hs y después desaparece
+sola — no hace falta que vuelvas a tocar nada.
+
 ## Cómo agregar fotos
 
 1. Guardá la foto del perfume dentro de la carpeta `images/productos/`

@@ -15,6 +15,11 @@
                      (si no tenés foto todavía, dejá "placeholder.svg")
     descripcion   -> texto corto sobre el perfume
     destacado     -> true si querés que aparezca primero, si no false
+    fechaAlta     -> (OPCIONAL) fecha en la que cargaste el perfume, en
+                     formato "AAAA-MM-DD" (ej: "2026-09-21"). Si la ponés,
+                     durante las primeras 24hs aparece una etiqueta
+                     "NUEVO" en la foto, y después desaparece sola. Si no
+                     la ponés, el perfume nunca muestra esa etiqueta.
     opciones      -> lista de formatos en los que se vende (ver abajo)
 
   Campos de cada opción (dentro de "opciones"):

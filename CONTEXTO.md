@@ -108,11 +108,20 @@ de Actions en "Read and write" (`gh api -X PUT
 repos/laureanomansilla/catalogo-perfumes/actions/permissions/workflow -f
 default_workflow_permissions=write`) — ya está configurado así.
 
+## Etiqueta "Nuevo"
+
+Campo opcional `fechaAlta: "AAAA-MM-DD"` en cada producto de `productos.js`.
+Si está presente y pasaron menos de 24hs desde esa fecha, `main.js`
+(función `esNuevo`) muestra una etiqueta "NUEVO" sobre la foto; pasadas las
+24hs desaparece sola, sin ninguna acción manual. Implementado 2026-09-21;
+los 15 perfumes cargados hasta esa fecha no tienen `fechaAlta` a propósito
+(para no mostrar la etiqueta en todos a la vez) — de ahí en más, cada
+producto nuevo puede sumarla.
+
 ## Pendientes / ideas anotadas, no implementadas
 
 - Filtro por marca (hoy solo hay filtro por tipo y género).
 - Botón de WhatsApp como alternativa a Instagram.
-- Etiqueta "Nuevo" para últimos ingresos.
 
 ## Cómo seguir trabajando
 

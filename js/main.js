@@ -57,6 +57,14 @@
     return producto.opciones.filter((op) => mostrarAgotados || op.disponible);
   }
 
+  const VEINTICUATRO_HORAS_MS = 24 * 60 * 60 * 1000;
+
+  function esNuevo(producto) {
+    if (!producto.fechaAlta) return false;
+    const transcurrido = Date.now() - new Date(producto.fechaAlta).getTime();
+    return transcurrido >= 0 && transcurrido < VEINTICUATRO_HORAS_MS;
+  }
+
   function crearFilaOpcion(producto, opcion) {
     const fila = document.createElement("div");
     fila.className = "opcion" + (opcion.disponible ? "" : " opcion-agotada");
@@ -89,6 +97,7 @@
 
     card.innerHTML = `
       <div class="card-img-wrap">
+        ${esNuevo(producto) ? '<span class="badge-nuevo">Nuevo</span>' : ""}
         <img src="images/productos/${producto.imagen}" alt="${producto.nombre}" loading="lazy" />
       </div>
       <div class="card-body">
