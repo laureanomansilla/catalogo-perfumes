@@ -27,6 +27,10 @@
   const modalOpciones = $("#modal-opciones");
   const modalCerrar = $("#modal-cerrar");
 
+  const newsletterOverlay = $("#newsletter-overlay");
+  const newsletterCerrar = $("#newsletter-cerrar");
+  const abrirNewsletterBtn = $("#abrir-newsletter");
+
   function registrarEvento(nombre, params) {
     if (typeof window.gtag === "function") {
       window.gtag("event", nombre, params);
@@ -176,8 +180,28 @@
   modalOverlay.addEventListener("click", (e) => {
     if (e.target === modalOverlay) cerrarModal();
   });
+
+  function abrirNewsletter() {
+    newsletterOverlay.hidden = false;
+    document.body.style.overflow = "hidden";
+    registrarEvento("abrir_newsletter", {});
+  }
+
+  function cerrarNewsletter() {
+    newsletterOverlay.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  abrirNewsletterBtn.addEventListener("click", abrirNewsletter);
+  newsletterCerrar.addEventListener("click", cerrarNewsletter);
+  newsletterOverlay.addEventListener("click", (e) => {
+    if (e.target === newsletterOverlay) cerrarNewsletter();
+  });
+
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !modalOverlay.hidden) cerrarModal();
+    if (e.key !== "Escape") return;
+    if (!modalOverlay.hidden) cerrarModal();
+    if (!newsletterOverlay.hidden) cerrarNewsletter();
   });
 
   function crearCard(producto, opciones) {

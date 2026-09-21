@@ -39,29 +39,21 @@
           <p id="brand-slogan" class="slogan">Perfumes originales y decants al mejor precio</p>
         </div>
       </div>
-      <a id="instagram-link" class="ig-button" href="#" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="2"/>
-          <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="2"/>
-          <circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/>
-        </svg>
-        <span>Seguinos</span>
-      </a>
+      <div class="header-actions">
+        <a id="instagram-link" class="ig-button" href="#" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="2"/>
+            <circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/>
+          </svg>
+          <span>Seguinos</span>
+        </a>
+        <button id="abrir-newsletter" class="newsletter-link">Recibir promos por email</button>
+      </div>
     </div>
   </header>
 
   <main class="container">
-
-    <section class="newsletter">
-      <iframe
-        src="https://93d1ba30.sibforms.com/v2/serve/MUIFAGXFqaPKwJIABq2H_AssWh6yvCUqOw8zQDyH0bYobu9Jbjc4D04dy6ZtkfiVXKZtLhKfjMNWFrCX-mQnzwbm07PTKqCbbk1wCUvYrYedUEhxnZzylXUX4QehwCDj0LHMc76bN2hgttNXZXwsZT6dbFKoXmlm9irACt0aQoGYcMN7AqYi9Ui2zWYvVPny2t1Swo0-lhYFG87z_g=="
-        title="Suscribite para recibir promociones"
-        loading="lazy"
-        frameborder="0"
-        scrolling="auto"
-        allowfullscreen
-      ></iframe>
-    </section>
 
     <section class="filters">
       <input type="text" id="filtro-busqueda" placeholder="Buscar por nombre o marca..." aria-label="Buscar" />
@@ -130,6 +122,19 @@
         </div>
         <div id="modal-opciones" class="opciones"></div>
       </div>
+    </div>
+  </div>
+
+  <div id="newsletter-overlay" class="modal-overlay" hidden>
+    <div class="modal modal-newsletter" role="dialog" aria-modal="true" aria-label="Suscribite para recibir promociones">
+      <button id="newsletter-cerrar" class="modal-cerrar" aria-label="Cerrar">&times;</button>
+      <iframe
+        src="https://93d1ba30.sibforms.com/v2/serve/MUIFAGXFqaPKwJIABq2H_AssWh6yvCUqOw8zQDyH0bYobu9Jbjc4D04dy6ZtkfiVXKZtLhKfjMNWFrCX-mQnzwbm07PTKqCbbk1wCUvYrYedUEhxnZzylXUX4QehwCDj0LHMc76bN2hgttNXZXwsZT6dbFKoXmlm9irACt0aQoGYcMN7AqYi9Ui2zWYvVPny2t1Swo0-lhYFG87z_g=="
+        title="Suscribite para recibir promociones"
+        frameborder="0"
+        scrolling="auto"
+        allowfullscreen
+      ></iframe>
     </div>
   </div>
 
