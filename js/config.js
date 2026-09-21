@@ -26,5 +26,5 @@ window.CONFIG = {
   // propiedad gratuita en https://analytics.google.com (Admin > Crear
   // propiedad > Flujo de datos web). Mientras esto esté vacío "", el
   // catálogo NO manda ninguna estadística a Google.
-  googleAnalyticsId: "",
+  googleAnalyticsId: "G-9CY86YSVYH",
 };
