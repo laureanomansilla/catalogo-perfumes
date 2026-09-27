@@ -161,9 +161,25 @@ dentro de `#newsletter-overlay`). **Importante**: el iframe no debe tener
 `loading="lazy"` — al estar dentro de un modal oculto por defecto, el
 lazy-load evita que cargue a tiempo cuando se abre.
 
+## Botón "Compartir" + link directo a un perfume
+
+En el modal de detalle, botón `#modal-compartir` junto al género. Al
+tocarlo (`compartirProducto` en `main.js`) arma un link tipo
+`.../catalogo-perfumes/#producto-<id>` y usa `navigator.share()` si el
+dispositivo lo soporta (celulares), o copia el link al portapapeles como
+respaldo (desktop/navegadores sin soporte). Ese link, al abrirse, dispara
+`abrirProductoCompartido()` (se ejecuta al cargar la página) que busca el
+`id` en la URL y abre el modal de ese perfume automáticamente — así quien
+lo recibe cae directo en la ficha del producto, no en el catálogo general.
+Implementado 2026-09-27. No expone ningún dato del vendedor: el que
+comparte elige la app (WhatsApp, Instagram, etc.), no hay número de
+teléfono involucrado.
+
 ## Pendientes / ideas anotadas, no implementadas
 
-Sin pendientes técnicos abiertos (2026-09-21).
+Sin pendientes técnicos abiertos (2026-09-27). Faltan cargar perfumes que
+se venden solo en decant (sin frasco entero) — el usuario avisó que los
+va a ir mandando.
 
 **Descartado a propósito**: botón de WhatsApp como alternativa a Instagram.
 El usuario pidió explícitamente no agregarlo (2026-09-21): el WhatsApp

@@ -26,6 +26,7 @@
   const modalNotas = $("#modal-notas");
   const modalOpciones = $("#modal-opciones");
   const modalCerrar = $("#modal-cerrar");
+  const modalCompartir = $("#modal-compartir");
 
   const newsletterOverlay = $("#newsletter-overlay");
   const newsletterCerrar = $("#newsletter-cerrar");
@@ -147,6 +148,24 @@
     return fila;
   }
 
+  function compartirProducto(producto) {
+    const url = `${location.origin}${location.pathname}#producto-${producto.id}`;
+    const texto = `Mirá ${producto.nombre} (${producto.marca}) en el catálogo de ${CONFIG.nombreEmprendimiento}`;
+
+    registrarEvento("compartir_producto", { producto: producto.nombre, marca: producto.marca });
+
+    if (navigator.share) {
+      navigator.share({ title: producto.nombre, text: texto, url }).catch(() => {});
+      return;
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(() => {
+        mostrarToast("Link copiado, pegalo donde quieras compartirlo");
+      });
+    }
+  }
+
   function abrirModal(producto, opciones) {
     modalImg.src = `images/productos/${producto.imagen}`;
     modalImg.alt = producto.nombre;
@@ -154,6 +173,7 @@
     modalNombre.textContent = producto.nombre;
     modalGenero.textContent = producto.genero;
     modalDesc.textContent = producto.descripcion || "";
+    modalCompartir.onclick = () => compartirProducto(producto);
 
     if (producto.notas) {
       modalNotas.textContent = producto.notas;
@@ -302,8 +322,19 @@
     el.addEventListener("change", render);
   });
 
+  function abrirProductoCompartido() {
+    const match = location.hash.match(/^#producto-(\d+)$/);
+    if (!match) return;
+
+    const producto = PRODUCTOS.find((p) => String(p.id) === match[1]);
+    if (!producto) return;
+
+    abrirModal(producto, opcionesVisibles(producto, true));
+  }
+
   aplicarConfiguracion();
   poblarMarcas();
   cargarGoogleAnalytics();
   render();
+  abrirProductoCompartido();
 })();
