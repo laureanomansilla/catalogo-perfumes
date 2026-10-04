@@ -187,8 +187,8 @@ window.PRODUCTOS = [
     notas: "Bergamota, jengibre confitado, malvavisco de chocolate, jazmín, leche de coco, vainilla, madera cashmere, crema chantilly, almizcle",
     destacado: false,
     opciones: [
-      { tipo: "Decant", ml: 5, precio: 6100, disponible: true },
-      { tipo: "Perfume", ml: 75, precio: 40000, disponible: true },
+      { tipo: "Decant", ml: 5, precio: 6100, disponible: false },
+      { tipo: "Perfume", ml: 75, precio: 40000, disponible: false },
     ],
   },
   {
