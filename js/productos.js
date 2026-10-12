@@ -376,4 +376,19 @@ window.PRODUCTOS = [
       { tipo: "Perfume", ml: 100, precio: 50000, disponible: true },
     ],
   },
+  {
+    id: 32,
+    nombre: "Naxos",
+    marca: "Xerjoff",
+    genero: "Unisex",
+    imagen: "naxos.png",
+    descripcion: "Cítrico gourmand, con miel y tabaco. Calidad G5 (réplica de alta fidelidad).",
+    notas: "Lavanda, bergamota, limón, miel, canela, cashmeran, jazmín sambac, tabaco, vainilla, haba tonka",
+    destacado: false,
+    fechaAlta: "2026-10-12",
+    opciones: [
+      { tipo: "Decant", ml: 5, precio: 5460, disponible: true },
+      { tipo: "Perfume", ml: 100, precio: 50000, disponible: true },
+    ],
+  },
 ];
