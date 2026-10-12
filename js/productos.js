@@ -346,4 +346,19 @@ window.PRODUCTOS = [
       { tipo: "Perfume", ml: 100, precio: 50000, disponible: true },
     ],
   },
+  {
+    id: 30,
+    nombre: "Vintage Radio",
+    marca: "Lattafa Pride",
+    genero: "Unisex",
+    imagen: "vintage-radio.png",
+    descripcion: "Oriental amaderado, con un toque frutal y especiado.",
+    notas: "Lavanda, salvia, bergamota, ciruela, palo santo, pimienta negra, sándalo, oud",
+    destacado: false,
+    fechaAlta: "2026-10-12",
+    opciones: [
+      { tipo: "Decant", ml: 5, precio: 5475, disponible: true },
+      { tipo: "Perfume", ml: 100, precio: 45000, disponible: true },
+    ],
+  },
 ];
