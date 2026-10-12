@@ -351,7 +351,7 @@ window.PRODUCTOS = [
     nombre: "Vintage Radio",
     marca: "Lattafa Pride",
     genero: "Unisex",
-    imagen: "vintage-radio.png",
+    imagen: "vintage-radio.jpg",
     descripcion: "Oriental amaderado, con un toque frutal y especiado.",
     notas: "Lavanda, salvia, bergamota, ciruela, palo santo, pimienta negra, sándalo, oud",
     destacado: false,
