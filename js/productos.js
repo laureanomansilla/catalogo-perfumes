@@ -366,7 +366,7 @@ window.PRODUCTOS = [
     nombre: "Supremacy Collector's Edition",
     marca: "Afnan",
     genero: "Hombre",
-    imagen: "supremacy-collectors-edition.png",
+    imagen: "supremacy-collectors-edition.jpg",
     descripcion: "Chypre frutal, con ananá y azahar sobre fondo amaderado.",
     notas: "Ananá, bergamota, flores blancas, manzana, azahar, abedul, ámbar, musgo de roble, almizcle, ámbar gris",
     destacado: false,
