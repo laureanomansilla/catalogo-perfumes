@@ -361,4 +361,19 @@ window.PRODUCTOS = [
       { tipo: "Perfume", ml: 100, precio: 45000, disponible: true },
     ],
   },
+  {
+    id: 31,
+    nombre: "Supremacy Collector's Edition",
+    marca: "Afnan",
+    genero: "Hombre",
+    imagen: "supremacy-collectors-edition.png",
+    descripcion: "Chypre frutal, con ananá y azahar sobre fondo amaderado.",
+    notas: "Ananá, bergamota, flores blancas, manzana, azahar, abedul, ámbar, musgo de roble, almizcle, ámbar gris",
+    destacado: false,
+    fechaAlta: "2026-10-12",
+    opciones: [
+      { tipo: "Decant", ml: 5, precio: 5460, disponible: true },
+      { tipo: "Perfume", ml: 100, precio: 50000, disponible: true },
+    ],
+  },
 ];
