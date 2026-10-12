@@ -331,4 +331,19 @@ window.PRODUCTOS = [
       { tipo: "Decant", ml: 5, precio: 7000, disponible: true },
     ],
   },
+  {
+    id: 29,
+    nombre: "Odyssey Aqua",
+    marca: "Armaf",
+    genero: "Hombre",
+    imagen: "odyssey-aqua.jpg",
+    descripcion: "Aromático acuático, fresco y fácil de usar para el día a día.",
+    notas: "Naranja, pomelo, artemisa, menta, lavanda, ambroxán, pachulí, ciprés",
+    destacado: false,
+    fechaAlta: "2026-10-12",
+    opciones: [
+      { tipo: "Decant", ml: 5, precio: 5260, disponible: true },
+      { tipo: "Perfume", ml: 100, precio: 50000, disponible: true },
+    ],
+  },
 ];
