@@ -391,4 +391,19 @@ window.PRODUCTOS = [
       { tipo: "Perfume", ml: 100, precio: 50000, disponible: true },
     ],
   },
+  {
+    id: 33,
+    nombre: "Club de Nuit Woman",
+    marca: "Armaf",
+    genero: "Mujer",
+    imagen: "club-de-nuit-woman.png",
+    descripcion: "Floral frutal, cítrico fresco con fondo de pachulí y almizcle.",
+    notas: "Naranja, bergamota, pomelo, durazno, rosa, jazmín, geranio, lichi, pachulí, almizcle, vainilla, vetiver",
+    destacado: false,
+    fechaAlta: "2026-10-12",
+    opciones: [
+      { tipo: "Decant", ml: 5, precio: 5100, disponible: true },
+      { tipo: "Perfume", ml: 105, precio: 45000, disponible: true },
+    ],
+  },
 ];
