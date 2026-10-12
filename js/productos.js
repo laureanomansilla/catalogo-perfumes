@@ -381,7 +381,7 @@ window.PRODUCTOS = [
     nombre: "Naxos",
     marca: "Xerjoff",
     genero: "Unisex",
-    imagen: "naxos.png",
+    imagen: "naxos.jpg",
     descripcion: "Cítrico gourmand, con miel y tabaco. Calidad G5 (réplica de alta fidelidad).",
     notas: "Lavanda, bergamota, limón, miel, canela, cashmeran, jazmín sambac, tabaco, vainilla, haba tonka",
     destacado: false,
