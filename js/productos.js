@@ -396,7 +396,7 @@ window.PRODUCTOS = [
     nombre: "Club de Nuit Woman",
     marca: "Armaf",
     genero: "Mujer",
-    imagen: "club-de-nuit-woman.png",
+    imagen: "club-de-nuit-woman.jpg",
     descripcion: "Floral frutal, cítrico fresco con fondo de pachulí y almizcle.",
     notas: "Naranja, bergamota, pomelo, durazno, rosa, jazmín, geranio, lichi, pachulí, almizcle, vainilla, vetiver",
     destacado: false,
