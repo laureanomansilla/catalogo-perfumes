@@ -436,4 +436,19 @@ window.PRODUCTOS = [
       { tipo: "Perfume", ml: 100, precio: 45000, disponible: true },
     ],
   },
+  {
+    id: 36,
+    nombre: "Viking Beirut",
+    marca: "Bharara",
+    genero: "Unisex",
+    imagen: "viking-beirut.jpg",
+    descripcion: "Fresco y amaderado, con cítricos y salvia sobre un fondo de musgo, pachulí y vetiver.",
+    notas: "Bergamota, limón, gálbano, salvia esclarea, geranio, notas ozónicas, musgo de roble, pachulí, vetiver, haba tonka",
+    destacado: false,
+    fechaAlta: "2026-11-03",
+    opciones: [
+      { tipo: "Decant", ml: 5, precio: 5400, disponible: true },
+      { tipo: "Perfume", ml: 100, precio: 55000, disponible: true },
+    ],
+  },
 ];
