@@ -406,4 +406,19 @@ window.PRODUCTOS = [
       { tipo: "Perfume", ml: 105, precio: 45000, disponible: true },
     ],
   },
+  {
+    id: 34,
+    nombre: "Hawas Verde",
+    marca: "Rasasi",
+    genero: "Hombre",
+    imagen: "hawas-verde.jpg",
+    descripcion: "Frescura cítrica y verde, con lima, manzana verde y romero sobre fondo ambarado.",
+    notas: "Lima, cítricos, manzana verde, romero, ámbar, pachulí, almizcle",
+    destacado: false,
+    fechaAlta: "2026-11-03",
+    opciones: [
+      { tipo: "Decant", ml: 5, precio: 5475, disponible: true },
+      { tipo: "Perfume", ml: 100, precio: 45000, disponible: true },
+    ],
+  },
 ];
