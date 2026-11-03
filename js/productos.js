@@ -451,4 +451,19 @@ window.PRODUCTOS = [
       { tipo: "Perfume", ml: 100, precio: 55000, disponible: true },
     ],
   },
+  {
+    id: 37,
+    nombre: "King Soleil",
+    marca: "Bharara",
+    genero: "Unisex",
+    imagen: "king-soleil.jpg",
+    descripcion: "Cítrico y luminoso, con frutos rojos y un fondo cálido de ámbar y maderas.",
+    notas: "Bergamota de Calabria, limón de Sicilia, mandarina de Sicilia, frutos rojos, jazmín, ámbar gris, madera de cachemira, bálsamo de copaiba, sándalo",
+    destacado: false,
+    fechaAlta: "2026-11-03",
+    opciones: [
+      { tipo: "Decant", ml: 5, precio: 5475, disponible: true },
+      { tipo: "Perfume", ml: 100, precio: 45000, disponible: true },
+    ],
+  },
 ];
