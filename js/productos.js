@@ -481,4 +481,19 @@ window.PRODUCTOS = [
       { tipo: "Perfume", ml: 100, precio: 36000, disponible: true },
     ],
   },
+  {
+    id: 39,
+    nombre: "Game of Spades Boston",
+    marca: "Jo Milano",
+    genero: "Unisex",
+    imagen: "game-of-spades-boston.jpg",
+    descripcion: "Fresco y frutal, con ananá y enebro sobre un fondo amaderado de cedro y vetiver.",
+    notas: "Ananá, bayas de enebro, bergamota, brotes de grosella negra, cedro, vetiver",
+    destacado: false,
+    fechaAlta: "2026-11-03",
+    opciones: [
+      { tipo: "Decant", ml: 5, precio: 5325, disponible: true },
+      { tipo: "Perfume", ml: 100, precio: 43000, disponible: true },
+    ],
+  },
 ];
