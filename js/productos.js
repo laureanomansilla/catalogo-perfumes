@@ -466,4 +466,19 @@ window.PRODUCTOS = [
       { tipo: "Perfume", ml: 100, precio: 45000, disponible: true },
     ],
   },
+  {
+    id: 38,
+    nombre: "Vulcan Sable",
+    marca: "French Avenue",
+    genero: "Unisex",
+    imagen: "vulcan-sable.jpg",
+    descripcion: "Oriental amaderado, con whisky y especias sobre un fondo cálido de vainilla y benjuí.",
+    notas: "Whisky, naranja, mandarina, cilantro, cashmeran, haba tonka, estoraque, anís, vainilla, pachulí, benjuí",
+    destacado: false,
+    fechaAlta: "2026-11-03",
+    opciones: [
+      { tipo: "Decant", ml: 5, precio: 4725, disponible: true },
+      { tipo: "Perfume", ml: 100, precio: 36000, disponible: true },
+    ],
+  },
 ];
