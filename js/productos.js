@@ -421,4 +421,19 @@ window.PRODUCTOS = [
       { tipo: "Perfume", ml: 100, precio: 45000, disponible: true },
     ],
   },
+  {
+    id: 35,
+    nombre: "Amber Oud Aqua Dubai",
+    marca: "Al Haramain",
+    genero: "Unisex",
+    imagen: "amber-oud-aqua-dubai.jpg",
+    descripcion: "Fresco y frutal, con cítricos, melón y ananá sobre un fondo suave de almizcle y vainilla.",
+    notas: "Bergamota, mandarina, notas verdes, melón, ananá, ámbar, grosella negra, almizcle, petitgrain, gálbano, vainilla",
+    destacado: false,
+    fechaAlta: "2026-11-03",
+    opciones: [
+      { tipo: "Decant", ml: 5, precio: 5470, disponible: true },
+      { tipo: "Perfume", ml: 100, precio: 45000, disponible: true },
+    ],
+  },
 ];
